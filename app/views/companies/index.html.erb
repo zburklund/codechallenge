@@ -2,12 +2,13 @@
 
 <h1>Companies</h1>
 
-<table>
+<table id="sortable-table">
   <thead>
     <tr>
       <th>Company name</th>
       <th>Company ID</th>
-      <th colspan="3">Editing Tools</th>
+      <th>Edit</th>
+      <th>Destroy</th>
     </tr>
   </thead>
 
@@ -16,8 +17,7 @@
       <tr>
         <td><%= company.company_name %></td>
         <td><%= company.id %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
+        <td><%= link_to 'Edit', edit_company_path(company), :class => 'btn btn-sm btn-primary' %></td>
         <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'btn btn-sm btn-danger delete-company' %></td>
       </tr>
     <% end %>
