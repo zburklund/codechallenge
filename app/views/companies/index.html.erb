@@ -18,7 +18,7 @@
         <td><%= company.id %></td>
         <td><%= link_to 'Show', company %></td>
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'btn btn-sm btn-danger delete-company' %></td>
       </tr>
     <% end %>
   </tbody>
