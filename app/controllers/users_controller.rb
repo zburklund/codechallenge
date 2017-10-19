@@ -21,6 +21,13 @@ class UsersController < ApplicationController
   def edit
   end
 
+  # import both company and user data at the same time
+  def import
+    Company.import(params[:file])
+    User.import(params[:file])
+    redirect_to root_url, notice: "Customer/Company Data Imported!"
+  end
+
   # POST /users
   # POST /users.json
   def create
